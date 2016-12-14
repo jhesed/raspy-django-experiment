@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block content %}
+    
+      {% load staticfiles %}
+    <!-- Section: Village Map -->
+      <div class="container">
+        <div class="parent-map">
+          <img src="{% static "img/village.PNG" %}" width="1159" height="564" alt="Village" usemap="#housemap">
+
+            <map name="housemap" id="housemap">
+
+              <!-- 
+                <div class="map-highlight" style="left:99px; top:402px">
+                  <area shape="circle" coords="99,402,20" alt="House1" href="house1.html"/>
+                </div>
+              -->
+      
+            {% for notif, villager in notif_villagers %}
+                <a href="#" id="villager_{{notif.villager_id}}">
+                  <div class="map-highlight" style="left:{{notif.coords_left}}px; top:{{notif.coords_top}}px" id="area_{{notif.villager_id}}">
+                      <area shape="circle" coords="{{notif.house_coordinates}}" />
+                  </div>      
+                </a>
+
+
+                <script>
+                    $(document).ready(function() {
+
+                        $('#area_{{notif.villager_id}}').tooltipster({
+                            content: $('<div class="table-responsive"><table class="table"><tr><td>Contact Person:</td><td>{{villager.first_name}} {{villager.last_name}}</td></tr><tr><td>Phone:</td><td>{{villager.phone_number}}</td></tr><tr><td>Lot Number</td><td>{{villager.lot_number}}</td></tr><tr>{%if villager.gmap_coordinates%}<td>google map coordinates</td><td>{{villager.gmap_coordinates}}</td></tr>{% endif %}</table></div><button type="button" class="btn btn-default" id="dismiss_{{notif.villager_id}}">Dismiss</button>'),
+                            contentAsHTML: true,
+                            position: 'right',
+                            positionTracker: true,
+                            autoclose: false,
+                            trigger: 'click',
+                            multiple: true,
+                            interactive: true,
+                            functionReady: function(){ 
+                              console.log("Event triggered")
+                              $("#dismiss_{{notif.villager_id}}").click(function(){
+
+                                console.log("Clicked!")
+                                 $.ajax
+                                   ({ 
+                                      url: '/notification',
+                                      data: {"id": {{notif.id}}},
+                                      type: 'post',
+                                      success: function(result)
+                                      { 
+
+                                          $("#villager_{{notif.villager_id}}").remove();
+                                      }
+                                  });
+                              });
+                            }
+                       });
+                   });
+
+                </script>
+
+            {% endfor %}        
+            </map>
+        </div>
+      
+      </div>
+
+
+{% endblock content %}

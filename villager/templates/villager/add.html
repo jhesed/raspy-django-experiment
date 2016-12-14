@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Section: User Add -->
+    <div class="container">
+      <form class="form-horizontal">
+          <!-- <div class="form-group">
+              <label class="control-label col-xs-3" for="inputEmail">Email:</label>
+              <div class="col-xs-9">
+                  <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+              </div>
+          </div> -->
+          <div class="form-group">
+                  <label class="control-label col-xs-3" for="firstName">Name:</label>
+                  <div class="col-xs-3">
+                      <input type="text" class="form-control" id="firstName" placeholder="First Name">
+                  </div>                      
+                  <div class="col-xs-3">
+                      <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+                  </div>                      
+                  <div class="col-xs-3">
+                      <input type="text" class="form-control" id="middleName" placeholder="Middle Name">
+                  </div>
+          </div>
+       
+          <div class="form-group">
+              <label class="control-label col-xs-3" for="phoneNumber">Phone:</label>
+              <div class="col-xs-9">
+                  <input type="tel" class="form-control" id="phoneNumber" placeholder="Phone Number">
+              </div>
+          </div>
+
+          <div class="form-group">
+              <label class="control-label col-xs-3" for="address">Address:</label>
+              <div class="col-xs-9">
+                  <input type="tel" class="form-control" id="address" placeholder="Home Address">
+              </div>
+          </div>
+
+          <div class="form-group">
+              <label class="control-label col-xs-3" for="houseCoordinates">House Coordinates:</label>
+              <div class="col-xs-9">
+                  <input type="tel" class="form-control" id="houseCoordinates" placeholder="left, top, right, bottom, (i.e. 120, 20, 80, 50)">
+              </div>
+          </div>
+
+          <div class="form-group">
+              <label class="control-label col-xs-3" for="gmailCoordinates">Gmail Coordinates:</label>
+              <div class="col-xs-9">
+                  <input type="tel" class="form-control" id="gmailCoordinates" placeholder="left, top, right, bottom, (i.e. 120, 20, 80, 50)">
+              </div>
+          </div>
+
+        <!--   <div class="form-group">
+              <label class="control-label col-xs-3">Date of Birth:</label>
+              <div class="col-xs-3">
+                  <select class="form-control">
+                      <option>Date</option>
+                  </select>
+              </div>
+              <div class="col-xs-3">
+                  <select class="form-control">
+                      <option>Month</option>
+                  </select>
+              </div>
+              <div class="col-xs-3">
+                  <select class="form-control">
+                      <option>Year</option>
+                  </select>
+              </div>
+          </div> -->
+          <br>
+          <div class="form-group">
+              <div class="col-xs-offset-3 col-xs-9">
+                  <input type="submit" class="btn btn-primary" value="Submit">
+                  <input type="reset" class="btn btn-default" value="Reset">
+              </div>
+          </div>
+      </form>
+
+    </div>
+   
+{% endblock content %}

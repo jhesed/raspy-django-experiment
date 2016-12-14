@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+    
+      {% load staticfiles %}
+    <!-- Section: Village Map -->
+      <div class="container">
+            <div class="jumbotron">
+                <div class="table-responsive">
+                    <table class="table">
+                        <tr>
+                            <td>Contact Person</td>
+                            <td>{{ villager.first_name }}</td>
+                        </tr>
+                    </table>
+            </div>
+      </div>
+
+{% endblock content %}
