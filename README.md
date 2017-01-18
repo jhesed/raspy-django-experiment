@@ -1,3 +1,5 @@
-# raspy-django-experiment
-This is a repository of my ideas on using Python Django framework with Raspberry Pi.
-It was furthermore wrapped in Python Tornado to support asynchronous calls.
+# raspy-django-redis-zmq-experiment
+A simple experiment to wrap <b>Python Django</b> with <b>Python Tornado</b> to make it <i>asynchronous</i>.<br/>
+Tried adding other technologies like <i>ZMQ</i> and <i>Redis</i>
+Running this on a <b>Raspberry Pi</b> machine.
+
